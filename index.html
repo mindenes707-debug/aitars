@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Tanulási napló</h1>
+
+    <form id="studyForm">
+        <textarea id="what" placeholder="Mit tanultál?" required></textarea>
+
+        <input type="number" id="hours" placeholder="Órák" required>
+
+        <label>Fókusz: <span id="focusValue">5</span></label>
+        <input type="range" id="focus" min="1" max="10" value="5">
+
+        <label>
+            <input type="checkbox" id="done">
+            Megcsináltad amit terveztél
+        </label>
+
+        <button type="submit">Mentés</button>
+    </form>
+
+    <h2>Bejegyzések</h2>
+    <div id="entries"></div>
+
+    <script src="storage.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
