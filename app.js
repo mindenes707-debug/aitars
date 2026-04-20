@@ -39,6 +39,12 @@ function renderEntries() {
             <p>${e.done ? "✅ Kész" : "❌ Nem kész"}</p>
             <button onclick="deleteEntry(${index})">Törlés</button>
         `;
+        function deleteEntry(index) {
+    const entries = getEntries();
+    entries.splice(index, 1);
+    localStorage.setItem("study_entries", JSON.stringify(entries));
+    renderEntries();
+}
 
         entriesDiv.appendChild(div);
     });
