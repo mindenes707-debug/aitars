@@ -27,7 +27,7 @@ function renderEntries() {
     const entries = getEntries();
     entriesDiv.innerHTML = "";
 
-    entries.reverse().forEach(e => {
+    entries.forEach((e, index) => {
         const div = document.createElement("div");
         div.className = "entry";
 
@@ -37,10 +37,12 @@ function renderEntries() {
             <p>Órák: ${e.hours}</p>
             <p>Fókusz: ${e.focus}</p>
             <p>${e.done ? "✅ Kész" : "❌ Nem kész"}</p>
+            <button onclick="deleteEntry(${index})">Törlés</button>
         `;
 
         entriesDiv.appendChild(div);
     });
+}
 }
 
 renderEntries();
